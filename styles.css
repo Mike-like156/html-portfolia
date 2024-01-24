@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --heading-ff: "Roboto", sans-serif;
+  --text-ff: "Merriweather", sans-serif;
+
+  --bg-main: linear-gradient(
+    329deg,
+    rgba(189, 59, 30, 1) 18%,
+    rgba(223, 176, 20, 1) 100%
+  );
+  --bg-score-box: #c62f2f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--heading-ff);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-ff);
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  background-color: inherit;
+  border: none;
+  font: inherit;
+}
+
+button:focus {
+  outline: transparent;
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+/* App */
+
+body {
+  background: var(--bg-main);
+  display: grid;
+  place-items: center;
+}
+
+.game {
+  display: flex;
+  text-align: center;
+  border-radius: 8px;
+
+  position: relative;
+}
+
+.player {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 5rem 10rem;
+  transition: 0.5s;
+}
+
+.active_player {
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: 0.5s;
+}
+
+.player1 {
+  border-radius: 10px 0 0 10px;
+}
+
+.player2 {
+  border-radius: 0 10px 10px 0;
+}
+
+.player h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.player > p {
+  font-size: 5rem;
+  margin-bottom: 8rem;
+  color: var(--bg-score-box);
+}
+
+.player .score_box {
+  padding: 1.5rem 5rem;
+  background-color: var(--bg-score-box);
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.player .score_box > p:nth-child(2) {
+  margin-top: 0.5rem;
+  font-size: 2.5rem;
+}
+
+/* Absolutely positioned elements */
+
+.button,
+.dice-roll-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #d5d5d5;
+}
+
+.button-new-game {
+  top: 2.5rem;
+}
+
+.button-roll-dice {
+  bottom: 9.7rem;
+}
+
+.button-hold {
+  bottom: 5.2rem;
+}
+
+.dice-roll-img {
+  width: 100px;
+  top: 10rem;
+}
+
+.winner {
+  background-color: #422323;
+}
